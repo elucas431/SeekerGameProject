@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
     {
 
         Vector3 position = transform.position;
+
         if (Input.GetKey("w"))//|| (Input.mousePosition.y >= (Screen.height - panBoarderThickness)))
         {
             position.z += panSpeed * Time.deltaTime;
@@ -43,6 +44,7 @@ public class CameraController : MonoBehaviour
         position.z = Mathf.Clamp(position.z, -panLimit.y, panLimit.y);
         */
         transform.position = position;
+        this.transform.Rotate(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
     }
 }
 
