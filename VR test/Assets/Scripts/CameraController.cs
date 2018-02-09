@@ -7,6 +7,11 @@ public class CameraController : MonoBehaviour
 
     public float panSpeed = 20f;
     public float panBoarderThickness = 10f;
+    public Vector2 panLimit;
+    public float scrollSpeed = 20f;
+    public float minY = 20f;
+    public float maxY = 120f;
+
 
     // Update is called once per frame
     void Update()
@@ -30,6 +35,13 @@ public class CameraController : MonoBehaviour
             position.x -= panSpeed * Time.deltaTime;
         }
 
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        position.y += scroll * scrollSpeed * 100f * Time.deltaTime;
+        /*
+        position.x = Mathf.Clamp(position.x, -panLimit.x, panLimit.x);
+        position.y = Mathf.Clamp(position.y, minY, maxY);
+        position.z = Mathf.Clamp(position.z, -panLimit.y, panLimit.y);
+        */
         transform.position = position;
     }
 }
