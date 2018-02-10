@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
         position.z = Mathf.Clamp(position.z, -panLimit.y, panLimit.y);
         */
         transform.position = position;
-        this.transform.Rotate(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+        //this.transform.Rotate(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
     }
 }
 
