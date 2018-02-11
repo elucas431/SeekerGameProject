@@ -20,7 +20,7 @@ public class Relic : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Controller"))
         {
-            gameState = 2;
+          //Write code later here to move on
         }
     }
 }
