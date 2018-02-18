@@ -36,11 +36,11 @@ public class Pendolum : MonoBehaviour {
         //transform.rotation = Quaternion.Lerp(_start, _end, Mathf.Sin(startime * speed + Mathf.PI / 2) + 1.0f) / 2.0f);
     }
 
-    private void ResetTimer()
+   /* private void ResetTimer()
     {
         startime = 0.0f;
     }
-
+    */
 
     Quaternion PendulumRotation(float angle)
     {
