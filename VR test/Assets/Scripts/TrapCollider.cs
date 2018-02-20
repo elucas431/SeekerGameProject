@@ -18,7 +18,7 @@ public class TrapCollider : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Controller")) {
-           // SceneManager.LoadScene("test");
+            SceneManager.LoadScene("test")
         }
     }
 }
