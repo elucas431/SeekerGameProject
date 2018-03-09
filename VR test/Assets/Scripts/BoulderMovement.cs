@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoulderMovement : MonoBehaviour {
 
     public Rigidbody rb;
-    //public GameObject trigger;
+    public GameObject trigger;
     public bool active = false;
 
 	// Use this for initialization
@@ -18,9 +18,10 @@ public class BoulderMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) { 
-		//if (active == true)
-        //{
+        active = trigger.GetComponent<ActivateBoulder>().activate;
+        //if (Input.GetKeyDown(KeyCode.Space)) { 
+		if (active == true)
+        {
             rb.useGravity = true;
         }
 	}
