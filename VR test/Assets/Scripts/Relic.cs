@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Relic : MonoBehaviour {
+    public int gameState;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +15,12 @@ public class Relic : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnGrab()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        gameObject.SetActive(false);
-        //TODO: Send this to the door somehow
+        if (collision.gameObject.CompareTag("Controller"))
+        {
+          //Write code later here to move on
+        }
     }
 }
