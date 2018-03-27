@@ -12,12 +12,12 @@ public class BoulderMovement : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(0f, 270f, 0f);
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezePositionX
+        rb.constraints = RigidbodyConstraints.FreezePositionZ
             | RigidbodyConstraints.FreezePositionY
-            | RigidbodyConstraints.FreezeRotationX
-            | RigidbodyConstraints.FreezeRotationZ;
+            | RigidbodyConstraints.FreezeRotationZ
+            | RigidbodyConstraints.FreezeRotationY;
     }
 	
 	// Update is called once per frame
@@ -29,8 +29,8 @@ public class BoulderMovement : MonoBehaviour {
         {
             rb.useGravity = true;
             rb.constraints = RigidbodyConstraints.None;
-            rb.constraints = RigidbodyConstraints.FreezeRotationY
-            | RigidbodyConstraints.FreezeRotationZ;
+           // rb.constraints = RigidbodyConstraints.FreezeRotationY
+           // | RigidbodyConstraints.FreezeRotationZ;
         }
 	}
 
@@ -39,6 +39,7 @@ public class BoulderMovement : MonoBehaviour {
         GameObject floor = other.gameObject;
         if(floor == speedTrigger)
         {
+            transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             force = true;
         }
     }
@@ -47,7 +48,7 @@ public class BoulderMovement : MonoBehaviour {
     {
         if (force == true)
         {
-            Vector3 exl = new Vector3(0f, 0f, speed);
+            Vector3 exl = new Vector3(-speed, 0f, 0f);
             rb.AddForce(exl, ForceMode.Acceleration);
         }
     }
