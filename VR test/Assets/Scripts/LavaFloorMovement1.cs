@@ -9,10 +9,10 @@ public class LavaFloorMovement1 : MonoBehaviour {
     public float speed, pauseTime, startTime;
     private bool direction = false, finish = false;
     private float stopTime;
-
+    private float timer;
 	// Use this for initialization
 	void Start () {
-
+        timer = 0;
         startTime += pauseTime;
 	}
 	
@@ -23,36 +23,37 @@ public class LavaFloorMovement1 : MonoBehaviour {
 
     void FixedUpdate()
     {
+        timer += Time.deltaTime;
         if((transform.position == endPosition) && (!finish))
         {
             direction = true;
-            stopTime = Time.time + pauseTime;
+            stopTime = timer + pauseTime;
             finish = true;
         }
         if ((transform.position == startPosition) && (!finish))
         {
             direction = false;
-            stopTime = Time.time + pauseTime;
+            stopTime = timer + pauseTime;
             finish = true;
         }
 
-        if(direction && (Time.time > stopTime) && (Time.time > startTime))
+        if(direction && (timer > stopTime) && (timer > startTime))
         {
             transform.position = Vector3.MoveTowards(transform.position, startPosition, speed);
             finish = false;
         }
-        else if ((Time.time > stopTime) && (Time.time > startTime))
+        else if ((timer > stopTime) && (timer > startTime))
         {
             transform.position = Vector3.MoveTowards(transform.position, endPosition, speed);
             finish = false;
         }
     }
-
+    /*
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             other.transform.parent = this.transform;
         }
-    }
+    }*/
 }
