@@ -18,7 +18,10 @@ public class Lavacollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "player")
+
+       
+
+        if (col.gameObject.name == "prop_powerCube")
         {
             isDead = true; 
         }
