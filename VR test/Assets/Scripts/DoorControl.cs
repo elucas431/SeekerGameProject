@@ -3,10 +3,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 public class DoorControl : MonoBehaviour
 {
-    private int relicCount;
-    public int numOfRelics;
-    public GameObject relic;
-    public string sceneToLoad;
+    [SerializeField] private int LoadLevel;
+    public int relicCount;
+    public GameObject relic; 
 
     private void Start()
     {
@@ -21,16 +20,13 @@ public class DoorControl : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
 
-    {   
- 
-        if (other.gameObject.CompareTag("Player"))
+    {
+        if (relicCount >= 3)
         {
-            if (relicCount < numOfRelics&&gameObject==relic) {
-                relicCount++;
-            }
-            else
+
+            if (other.gameObject.CompareTag("Player"))
             {
-                SceneManager.LoadScene(sceneToLoad);
+                SceneManager.LoadScene(sceneBuildIndex: LoadLevel);
 
             }
         }
