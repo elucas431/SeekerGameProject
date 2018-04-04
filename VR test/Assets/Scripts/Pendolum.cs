@@ -31,8 +31,8 @@ public class Pendolum : MonoBehaviour {
     private void FixedUpdate()
     {
         startime += Time.deltaTime;
-        transform.rotation = Quaternion.Lerp(_start, _end, Mathf.Sin(startime * speed + Mathf.PI / 2) + 1.0f);
-        
+        transform.rotation = Quaternion.Lerp(_start, _end, (Mathf.Sin(startime * speed + Mathf.PI / 2) + 1.0f) / 2.0f);
+
         //transform.rotation = Quaternion.Lerp(_start, _end, Mathf.Sin(startime * speed + Mathf.PI / 2) + 1.0f) / 2.0f);
     }
 
