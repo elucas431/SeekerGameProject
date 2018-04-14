@@ -10,25 +10,26 @@ public class DoorControl : MonoBehaviour
 
     private void Start()
     {
-        relicCount = 0; 
+        relicCount = 0;
     }
 
     private void Update()
     {
-        
+
     }
 
 
     void OnCollisionEnter(Collision other)
 
-    {   
- 
+    {
+
         if (other.gameObject.CompareTag("Player"))
-        {
-            if (relicCount < numOfRelics&&gameObject==relic) {
+        {/*
+            if (relicCount < numOfRelics && gameObject == relic)
+            {
                 relicCount++;
             }
-            else
+            else */if (numOfRelics >= 3)
             {
                 SceneManager.LoadScene(sceneToLoad);
 
