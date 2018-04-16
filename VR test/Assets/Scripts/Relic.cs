@@ -6,21 +6,25 @@ using UnityEngine;
 
 public class Relic : MonoBehaviour {
     public int gameState;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject Door;
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Controller"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-          //Write code later here to move on
+            gameObject.SetActive(false);
+            Door.GetComponent<DoorControl>().numOfRelics++;
         }
     }
 }

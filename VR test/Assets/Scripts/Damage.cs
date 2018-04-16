@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour {
 
+    public bool kill = true;
+
 	// Use this for initialization
 	void Start () {
         
@@ -16,7 +18,7 @@ public class Damage : MonoBehaviour {
 	}
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if((other.gameObject.CompareTag("Player")) && (kill == true))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
