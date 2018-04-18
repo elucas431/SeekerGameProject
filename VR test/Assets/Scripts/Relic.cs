@@ -4,8 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Relic : MonoBehaviour {
-    public int gameState;
+public class Relic : MonoBehaviour { 
 	// Use this for initialization
 	void Start () {
 		
@@ -18,9 +17,9 @@ public class Relic : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Controller"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-          //Write code later here to move on
+            gameObject.SetActive(false);
         }
     }
 }
