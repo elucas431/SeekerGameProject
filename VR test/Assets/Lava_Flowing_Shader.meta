@@ -1,9 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 85729072b66146447ac21d3866c656d3
 folderAsset: yes
 timeCreated: 1522374300
 licenseType: Free
 DefaultImporter:
+=======
+guid: f64d6a272859a244a8fdc2c672f44ff8
+folderAsset: yes
+timeCreated: 1522710844
+licenseType: Free
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> FullmetalDBZ
   userData: 
   assetBundleName: 
   assetBundleVariant: 
